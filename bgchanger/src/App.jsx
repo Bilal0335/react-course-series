@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ColorBtn from "../components/colorbtn";
 
 function App() {
   const [color, setColor] = useState("olive");
@@ -8,28 +9,13 @@ function App() {
       style={{ backgroundColor: color }}
     >
       <div className="fixed inset-x-0 flex flex-wrap justify-center px-2 bottom-12">
-        <div className="flex flex-wrap justify-center gap-3 px-3 py-2 text-black capitalize bg-white shadow-lg rounded-3xl bottom-12">
-          <button
-            onClick={() => setColor("red")}
-            className="px-4 py-1 text-black rounded-full shadow-lg outline-none"
-            style={{ backgroundColor: "red" }}
-          >
-            Red
-          </button>
-          <button
-           onClick={() => setColor("yellow")}
-            className="px-4 py-1 text-black rounded-full shadow-lg outline-none"
-            style={{ backgroundColor: "yellow" }}
-          >
-            Yellow
-          </button>
-          <button
-           onClick={() => setColor("blue")}
-            className="px-4 py-1 text-black rounded-full shadow-lg outline-none"
-            style={{ backgroundColor: "blue" }}
-          >
-            Blue
-          </button>
+        <div className="flex flex-wrap justify-center gap-1 px-3 py-2 text-black capitalize bg-white shadow-lg rounded-3xl bottom-12">
+          <ColorBtn color={"red"} setColor={setColor} />
+          <ColorBtn color={"green"} setColor={setColor} />
+          <ColorBtn color={"yellow"} setColor={setColor} />
+          <ColorBtn color={"purple"} setColor={setColor} />
+          <ColorBtn color={"cyan"} setColor={setColor} />
+          <ColorBtn color={"orange"} setColor={setColor} />
         </div>
       </div>
     </div>
