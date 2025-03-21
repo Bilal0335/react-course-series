@@ -22,7 +22,9 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
-  const copyPasswordClipBoard =useCallback(()=>{},[password])
+  const copyPasswordClipBoard = useCallback(() => {
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   useEffect(() => {
     PasswordGenerator();
