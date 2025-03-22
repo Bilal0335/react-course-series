@@ -23,7 +23,10 @@ function App() {
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordClipBoard = useCallback(() => {
+    passwordRef.current?.select()
+    passwordRef.current?.setSelectionRange(0,101)
     window.navigator.clipboard.writeText(password);
+    
   }, [password]);
 
   useEffect(() => {
@@ -45,7 +48,7 @@ function App() {
             ref={passwordRef}
             onClick={copyPasswordClipBoard}
           />
-          <button className="py-0.5 px-3 text-white bg-blue-700 outline-none shrink-0">
+          <button className="py-0.5 px-3 text-white bg-blue-700 outline-none shrink-0" onClick={copyPasswordClipBoard}>
             copy
           </button>
         </div>
